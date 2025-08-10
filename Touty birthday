@@ -1,0 +1,750 @@
+<!DOCTYPE html>  <html lang="ar" >  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  
+  <title>Happy Birthday Touty</title>  
+  <style>  
+    body {  
+      margin: 0;  
+      height: 100vh;  
+      font-family: Arial, sans-serif;  
+      overflow: hidden;  
+      background-color: pink;  
+      background-image: repeating-linear-gradient(  
+              45deg,  
+              rgba(255, 255, 255, 0.2) 0,  
+              rgba(255, 255, 255, 0.2) 1px,  
+              transparent 1px,  
+              transparent 50px  
+          ),  
+          repeating-linear-gradient(  
+              -45deg,  
+              rgba(255, 255, 255, 0.2) 0,  
+              rgba(255, 255, 255, 0.2) 1px,  
+              transparent 1px,  
+              transparent 50px  
+          ),  
+          repeating-linear-gradient(  
+              0deg,  
+              transparent 0px 50px,  
+              rgba(255, 105, 180, 0.05) 50px 100px  
+          );  
+    }  /* صفحات مخفية افتراضياً */  
+.page {  
+  display: none;  
+  position: relative;  
+  height: 100vh;  
+  width: 100vw;  
+  text-align: center;  
+  cofont- bleu ;  
+  padding: 20px;  
+  box-sizing: border-box;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  display: flex;  
+}  
+
+/* صفحة 1 خلفية وردي مع خطوط */  
+#page1 {  
+  background-color: pink;  
+  background-image: repeating-linear-gradient(  
+          45deg,  
+          rgba(255, 255, 255, 0.2) 0,  
+          rgba(255, 255, 255, 0.2) 1px,  
+          transparent 1px,  
+          transparent 50px  
+      ),  
+      repeating-linear-gradient(  
+          -45deg,  
+          rgba(255, 255, 255, 0.2) 0,  
+          rgba(255, 255, 255, 0.2) 1px,  
+          transparent 1px,  
+          transparent 50px  
+      ),  
+      repeating-linear-gradient(  
+          0deg,  
+          transparent 0px 50px,  
+          rgba(255, 105, 180, 0.05) 50px 100px  
+      );  
+  overflow: visible;  
+  position: relative;  
+}  
+
+/* إيموجيات متناثرة في الصفحة الأولى */  
+#page1 .confetti {  
+  position: absolute;  
+  top: 0; left: 0;  
+  width: 100%;  
+  height: 100%;  
+  pointer-events: none;  
+  overflow: visible;  
+  z-index: 0;  
+}  
+#page1 .confetti span {  
+  position: absolute;  
+  font-size: 24px;  
+  animation: floatConfetti 7s ease-in-out infinite;  
+  opacity: 0.8;  
+  user-select: none;  
+  filter: drop-shadow(0 0 2px #ff5f9e);  
+}  
+/* توزيع الإيموجيات */  
+#page1 .confetti span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }  
+#page1 .confetti span:nth-child(2) { top: 20%; left: 40%; animation-delay: 1.5s; }  
+#page1 .confetti span:nth-child(3) { top: 30%; left: 70%; animation-delay: 3s; }  
+#page1 .confetti span:nth-child(4) { top: 50%; left: 25%; animation-delay: 2s; }  
+#page1 .confetti span:nth-child(5) { top: 65%; left: 60%; animation-delay: 4s; }  
+#page1 .confetti span:nth-child(6) { top: 80%; left: 80%; animation-delay: 5.5s; }  
+#page1 .confetti span:nth-child(7) { top: 90%; left: 15%; animation-delay: 1s; }  
+
+@keyframes floatConfetti {  
+  0%, 100% { transform: translateY(0); }  
+  50% { transform: translateY(-15px); }  
+}  
+
+/* نصوص الصفحة الأولى */  
+#page1 h1 {  
+  font-size: 2.2em;  
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);  
+  margin: 0 0 15px 0;  
+  position: relative;  
+  z-index: 1;  
+}  
+
+#page1 p {  
+  font-size: 1.2em;  
+  margin: 0 0 30px 0;  
+  position: relative;  
+  z-index: 1;  
+}  
+
+/* زر مشترك */  
+.btn {  
+  padding: 12px 22px;  
+  font-size: 1.1em;  
+  color: white;  
+  background: linear-gradient(45deg, #ff5f9e, #ff85c1);  
+  border: 3px solid white;  
+  border-radius: 25px;  
+  text-decoration: none;  
+  font-weight: bold;  
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);  
+  transition: all 0.3s ease;  
+  cursor: pointer;  
+  margin: 8px 6px;  
+  position: relative;  
+  z-index: 1;  
+}  
+
+.btn:hover {  
+  background: linear-gradient(45deg, #ff85c1, #ff5f9e);  
+  transform: scale(1.05);  
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);  
+}  
+
+/* صفحة 2 خلفية فخمة داكنة مع تأثير عيد ميلاد */  
+#page2 {  
+  background: radial-gradient(circle at center, #2c003e, #000015 90%);  
+  position: relative;  
+  overflow: hidden;  
+  color: #3b1700;  
+}  
+
+/* تحريك رقم 27 متناثر */  
+#page2::before {  
+  content: "27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27";  
+  font-size: 60px;  
+  font-weight: bold;  
+  color: rgba(255, 255, 255, 0.1);  
+  position: absolute;  
+  top: 0;  
+  left: 0;  
+  width: 200%;  
+  height: 200%;  
+  display: flex;  
+  flex-wrap: wrap;  
+  align-items: center;  
+  justify-content: center;  
+  pointer-events: none;  
+  animation: move27 60s linear infinite;  
+  z-index: 0;  
+  user-select: none;  
+}  
+
+@keyframes move27 {  
+  0% {  
+    transform: translate(0, 0);  
+  }  
+  100% {  
+    transform: translate(-50%, -50%);  
+  }  
+}  
+
+/* إضافة إيموجيات متناثرة */  
+#page2 .emojis {  
+  position: absolute;  
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  height: 100%;  
+  pointer-events: none;  
+  z-index: 0;  
+  user-select: none;  
+  overflow: visible;  
+}  
+/* بعض الإيموجيات موزعة عشوائياً */  
+#page2 .emojis span {  
+  position: absolute;  
+  font-size: 24px;  
+  animation: floatEmoji 10s ease-in-out infinite;  
+  opacity: 0.8;  
+}  
+/* حركة بسيطة فوق وتحت */  
+@keyframes floatEmoji {  
+  0%, 100% {  
+    transform: translateY(0);  
+  }  
+  50% {  
+    transform: translateY(-12px);  
+  }  
+}  
+
+/* محتوى الصفحة الثانية فوق الخلفية */  
+#page2 .content {  
+  position: relative;  
+  z-index: 1;  
+  max-width: 90vw;  
+  margin: 0 auto;  
+}  
+
+/* الصورة مع إطار أنحف وأصغر */  
+#page2 img {  
+  max-width: 240px;  
+  max-height: 320px;  
+  width: 100%;  
+  height: auto;  
+  border-radius: 20px;  
+  box-shadow: 0 6px 15px rgba(255, 182, 193, 0.6);  
+  margin-bottom: 15px;  
+  border: 2px solid #ffb6c1;  
+  background: white;  
+  object-fit: cover;  
+}  
+
+/* صندوق النص بتنسيق متناسق */  
+#page2 .message-box {  
+  border: 2px solid white;  
+  background: rgba(255, 182, 193, 0.5);  
+  color: #3b1700;  
+  font-size: 1.3em;  
+  font-weight: 700;  
+  padding: 10px 18px;  
+  border-radius: 20px;  
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);  
+  margin-bottom: 30px;  
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);  
+  line-height: 1.3;  
+  white-space: normal;  
+  direction: rtl;  
+  text-align: center;  
+}  
+
+/* صفحة 3 - خلفية إطار جيل وكعك وزخرفات */  
+#page3 {  
+  background: radial-gradient(circle at center, #1a0033, #0b001a 90%);  
+  position: relative;  
+  overflow: hidden;  
+  color: #ffe4e1;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  padding: 40px 20px;  
+}  
+#page3 .frame {
+  position: relative;
+  background: rgba(255, 182, 193, 0.15);
+  border: 4px solid #ff5f9e;
+  border-radius: 30px;
+  width: 95%;
+  max-width: 700px;
+  height: auto;
+  max-height: 80vh;      /* هذا يحد أقصى ارتفاع الإطار لـ 80% من ارتفاع الشاشة */
+  padding: 40px 30px;
+  box-shadow: 0 0 30px #ff5f9e88;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 1.5;
+  user-select: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  overflow-y: auto;     /* يضيف شريط تمرير عمودي إذا النص طويل */
+}
+/* زخارف عيد ميلاد داخل الصفحة 3 */  
+#page3 .decorations {  
+  position: absolute;  
+  pointer-events: none;  
+  user-select: none;  
+  top: 0; left: 0;  
+  width: 100%;  
+  height: 100%;  
+  z-index: 0;  
+  overflow: visible;  
+}  
+/* هدايا وكعك متناثرة */  
+#page3 .decorations span {  
+  position: absolute;  
+  font-size: 36px;  
+  animation: floatUpDown 8s ease-in-out infinite;  
+  opacity: 0.7;  
+  filter: drop-shadow(0 0 2px #ff5f9e);  
+}  
+#page3 .decorations span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }  
+#page3 .decorations span:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; }  
+#page3 .decorations span:nth-child(3) { top: 60%; left: 25%; animation-delay: 4s; }  
+#page3 .decorations span:nth-child(4) { top: 75%; left: 70%; animation-delay: 1s; }  
+#page3 .decorations span:nth-child(5) { top: 45%; left: 50%; animation-delay: 3s; }  
+#page3 .decorations span:nth-child(6) { top: 20%; left: 75%; animation-delay: 5s; }  
+
+/* حركة فوق وتحت */  
+@keyframes floatUpDown {  
+  0%, 100% { transform: translateY(0); }  
+  50% { transform: translateY(-15px); }  
+}  
+
+/* صفحة 4 - صفحة فارغة */  
+#page4 {  
+  background: linear-gradient(135deg, #ff5f9e, #ff85c1);  
+  color: white;  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  font-size: 2em;  
+  padding: 20px;  
+  text-align: center;  
+}  
+
+/* تعديلات لهواتف صغيرة */  
+@media (max-width: 400px) {  
+  #page1 h1 {  
+    font-size: 1.8em;  
+  }  
+
+  #page1 p {  
+    font-size: 1.4em;  
+  }  
+
+  .btn {  
+    padding: 10px 18px;  
+    font-size: 1em;  
+    margin: 6px 4px;  
+  }  
+
+  #page2::before {  
+    font-size: 40px;  
+  }  
+
+  #page2 .emojis span {  
+    font-size: 20px;  
+  }  
+
+  #page2 img {  
+    max-width: 200px;  
+    max-height: 260px;  
+    margin-bottom: 10px;  
+  }  
+
+  #page2 .message-box {  
+    font-size: 1.1em;  
+    padding: 8px 15px;  
+    margin-bottom: 20px;  
+  }  
+
+  #page3 .frame {  
+    font-size: 1.1em;  
+    padding: 20px 25px;  
+  }  
+
+  #page3 .decorations span {  
+    font-size: 28px;  
+  }  
+}
+
+  </style>  
+</head>  
+<body>  <!-- صفحة 1 -->  <div id="page1" class="page" style="display:flex;">  
+  <div class="confetti" aria-hidden="true">  
+    <span>🎉</span>  
+    <span>🎂</span>  
+    <span>🎈</span>  
+    <span>🎁</span>  
+    <span>🎊</span>  
+    <span>🧁</span>  
+    <span>🎶</span>  
+  </div>  
+  <h1>🎉 Happy Birthday Touty 🎉</h1>  
+  <p>Bienvenue à toi, ma femme! ❤️🫶🏻</p>  
+  <button class="btn" onclick="showPage(2)">توتي ارقص هنا 💗</button>  
+</div>  <!-- صفحة 2 -->  <div id="page2" class="page">  
+  <div class="emojis" aria-hidden="true">  
+    <span style="top:10%; left:5%;">🎂</span>  
+    <span style="top:30%; left:85%; animation-delay:2s;">🎉</span>  
+    <span style="top:60%; left:20%; animation-delay:4s;">🎈</span>  
+    <span style="top:80%; left:70%; animation-delay:1s;">🎁</span>  
+    <span style="top:40%; left:50%; animation-delay:3s;">🧁</span>  
+    <span style="top:15%; left:75%; animation-delay:5s;">🎊</span>  
+  </div>  
+  <div class="content">  
+    <img src="images/photo1.jpg" alt="Birthday Photo" />  
+    <div class="message-box">  
+      هاآبي بيرذاي تو يوو ! هابي بيرذداي تو يوو 🎼🎵 يااآ احلى<br />  
+      كتكوتةة في الدنيا 🎂❤️  
+    </div>  
+    <button class="btn" onclick="showPage(3)">نتوث ارقص هنا 💗</button>  
+  </div>  
+</div>  <!-- صفحة 3 -->  <div id="page3" class="page">  
+  <div class="decorations" aria-hidden="true">  
+    <span>🎁</span>  
+    <span>🎂</span>  
+    <span>🎉</span>  
+    <span>🎈</span>  
+    <span>🧁</span>  
+    <span>🎊</span>  
+  </div>  
+  <div class="frame">  
+    <p>
+Mon amour, ma douce Touty,<br/>
+Chaque instant passé à tes côtés est un trésor infini.<br/>
+Ton sourire éclaire mes jours les plus sombres,<br/>
+et ta voix est la mélodie qui berce mon cœur.<br/>
+Depuis le premier jour où nos chemins se sont croisés,<br/>
+tu as transformé ma vie en un conte de fées merveilleux.<br/>
+Aujourd’hui, en ce jour unique et précieux,<br/>
+je célèbre non seulement ta naissance,<br/>
+mais aussi la chance incroyable de t’avoir à mes côtés.<br/>
+<br/>
+Ta gentillesse, ta beauté, ta force et ta douceur<br/>
+font de toi la lumière qui guide mes pas.<br/>
+Je suis émerveillé par chaque instant partagé,<br/>
+et je chéris chaque sourire que tu m’offres.<br/>
+Tu es mon étoile, mon refuge, mon tout.<br/>
+<br/>
+Que cette nouvelle année de ta vie soit remplie<br/>
+de rires, de bonheur, de rêves réalisés<br/>
+et de moments magiques à deux.<br/>
+Je te promets de t’aimer et te soutenir,<br/>
+de te protéger et de te faire sourire,<br/>
+aujourd’hui, demain, pour toujours.<br/>
+<br/>
+Joyeux anniversaire, mon cœur, ma vie, mon trésor.<br/>
+Je t’aime plus que les mots ne sauraient jamais le dire.<br/>
+Que cette journée soit aussi merveilleuse que toi,<br/>
+et que notre amour grandisse encore et encore.<br/>
+❤️🎉🎂🎈🎁🧁🎊
+</p>
+    <button class="btn" onclick="showPage(4)">توتي زيد ارقص هنا 🥹</button>  
+  </div>  
+</div> 
+    
+<!-- صفحة 4 -->
+<section id="page4" style="
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffe6f0 !important; /* وردي فاتح وجميل */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #264653;
+">
+  
+  <!-- خلفية الإيموجيات والنصوص -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 20px;
+    gap: 15px;
+    user-select: none;
+    color: rgba(255, 105, 180, 0.3); /* وردي أوضح للإيموجيات */
+    line-height: 1;
+  ">
+    <span style="transform: rotate(-25deg);">11</span>
+    <span style="transform: rotate(20deg);">Touti</span>
+    <span style="transform: rotate(-15deg);">🧁</span>
+    <span style="transform: rotate(10deg);">🎉</span>
+    <span style="transform: rotate(-20deg);">11</span>
+    <span style="transform: rotate(25deg);">Touti</span>
+    <span style="transform: rotate(-30deg);">🧁</span>
+    <span style="transform: rotate(15deg);">🎉</span>
+    <span style="transform: rotate(-10deg);">11</span>
+    <span style="transform: rotate(20deg);">Touti</span>
+    <span style="transform: rotate(-25deg);">🧁</span>
+    <span style="transform: rotate(10deg);">🎉</span>
+    <span style="transform: rotate(-15deg);">11</span>
+    <span style="transform: rotate(25deg);">Touti</span>
+    <span style="transform: rotate(-20deg);">🧁</span>
+    <span style="transform: rotate(15deg);">🎉</span>
+    <span style="transform: rotate(-30deg);">11</span>
+    <span style="transform: rotate(20deg);">Touti</span>
+    <span style="transform: rotate(-10deg);">🧁</span>
+    <span style="transform: rotate(25deg);">🎉</span>
+  </div>
+  
+  <img src="images/photo2.jpg" alt="صورة الصفحة الرابعة" style="
+    width: 55%; /* أكبر قليلاً */
+    max-height: 55vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+  " />
+  
+  <div style="
+    margin-top: 20px;
+    width: 100%;
+    border-top: 3px solid #f4a261;
+    padding: 15px 10px 10px 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+  ">
+    <p>My beautiful Touty🫶🏻💗
+
+wish you were in my arms on your birthday night. I want to hold you and keep you in my embrace🫂feeling your warmth and kissing you over and over again🥹❤️. I want your heartbeat, your touch, your eyes, and your lips beside me as we celebrate together🎈💗
+
+Until that day comes, I send you a deep kiss and a passionate hug filled with love and longing🩷
+
+Happy birthday, my girl. I love you💗🎂
+Isleeeeeeem ✨️🎇mweeeh😍
+    </p>
+  </div>
+  
+  <!-- زر الانتقال للصفحة الخامسة -->
+<div style="margin-top: 20px; z-index: 1; position: relative;">
+  <a href="#page5" style="
+    background-color: #f4a261;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#e76f51'" onmouseout="this.style.backgroundColor='#f4a261'">
+  زيد ارقص هنا  🎂
+  </a>
+</div>
+  
+</section>
+
+<!-- الصفحة الخامسة -->
+<section id="page5" style="
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffe6f0 !important; /* وردي فاتح */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #264653;
+">
+
+  <!-- خلفية الإيموجيات والنصوص -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 20px;
+    gap: 15px;
+    user-select: none;
+    color: rgba(255, 105, 180, 0.3);
+    line-height: 1;
+  ">
+    <span style="transform: rotate(-25deg);">🎂</span>
+    <span style="transform: rotate(20deg);">Touti</span>
+    <span style="transform: rotate(-15deg);">🎈</span>
+    <span style="transform: rotate(10deg);">11</span>
+    <span style="transform: rotate(-20deg);">🎀</span>
+    <span style="transform: rotate(25deg);">Touti</span>
+    <span style="transform: rotate(-30deg);">🎁</span>
+    <span style="transform: rotate(15deg);">🎉</span>
+    <span style="transform: rotate(-10deg);">11</span>
+    <span style="transform: rotate(20deg);">💖</span>
+    <span style="transform: rotate(-25deg);">🎂</span>
+    <span style="transform: rotate(10deg);">Touti</span>
+    <span style="transform: rotate(-15deg);">🎈</span>
+    <span style="transform: rotate(25deg);">11</span>
+    <span style="transform: rotate(-20deg);">🎀</span>
+    <span style="transform: rotate(15deg);">Touti</span>
+  </div>
+
+  <!-- الصورة -->
+  <img src="images/photo5.jpg" alt="صورة الصفحة الخامسة" style="
+    width: 58%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+  " />
+
+  <!-- النص -->
+  <div style="
+    margin-top: 20px;
+    width: 100%;
+    border-top: 3px solid #f4a261;
+    padding: 15px 10px 10px 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+  ">
+    <p>
+      Joyeux anniversaire Bentyy 🎉🎂 ! Que cette journée spéciale soit remplie de rires, de surprises et de souvenirs inoubliables. Pour tes 21 ans, je te souhaite un monde de bonheur, de succès et de rêves réalisés. Reste toujours aussi lumineuse et incroyable que tu l’es aujourd’hui 💖.
+    </p>
+  </div>
+  <!-- زر الانتقال للصفحة السادسة -->
+<div style="margin-top: 20px; z-index: 1; position: relative;">
+  <a href="#page6" style="
+    background-color: #f4a261;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#e76f51'" onmouseout="this.style.backgroundColor='#f4a261'">
+    كتكوت زيد هنا 🫶🏻
+  </a>
+</div>
+
+</section>
+<!-- الصفحة السادسة -->
+<section id="page6" style="
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffe6f0 !important; /* وردي فاتح */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #264653;
+">
+
+  <!-- خلفية الإيموجيات والنصوص -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 20px;
+    gap: 15px;
+    user-select: none;
+    color: rgba(255, 105, 180, 0.3);
+    line-height: 1;
+  ">
+    <span style="transform: rotate(-25deg);">🎂</span>
+    <span style="transform: rotate(20deg);">Touti</span>
+    <span style="transform: rotate(-15deg);">🎈</span>
+    <span style="transform: rotate(10deg);">11</span>
+    <span style="transform: rotate(-20deg);">🎀</span>
+    <span style="transform: rotate(25deg);">Touti</span>
+    <span style="transform: rotate(-30deg);">🎁</span>
+    <span style="transform: rotate(15deg);">🎉</span>
+    <span style="transform: rotate(-10deg);">11</span>
+    <span style="transform: rotate(20deg);">💖</span>
+    <span style="transform: rotate(-25deg);">🎂</span>
+    <span style="transform: rotate(10deg);">Touti</span>
+    <span style="transform: rotate(-15deg);">🎈</span>
+    <span style="transform: rotate(25deg);">11</span>
+    <span style="transform: rotate(-20deg);">🎀</span>
+    <span style="transform: rotate(15deg);">Touti</span>
+  </div>
+
+  <!-- الصورة -->
+  <img src="images/photo6.jpg" alt="صورة الصفحة السادسة" style="
+    width: 58%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+  " />
+
+  <!-- النص -->
+  <div style="
+    margin-top: 20px;
+    width: 100%;
+    border-top: 3px solid #f4a261;
+    padding: 15px 10px 10px 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+  ">
+    <p> وهاذي لييـك ياوردتـي 💐❤️
+       كل عام وانت عيد ميلاد الأيام 💗🫂 ياحظ عام ضـوى فيه يوم ميلادك🤍✨️
+       توتـي دمتي سعيدةة وجميلة 🥺🩷🩷
+       Love uu so much 🎈🫶🏻
+    </p>
+  </div>
+
+</section>
+
+</section>
+ <script>  
+  function showPage(num) {  
+    document.querySelectorAll('.page').forEach(page => {  
+      page.style.display = 'none';  
+    });  
+    const page = document.getElementById('page' + num);  
+    if (page) {  
+      page.style.display = 'flex';  
+    }  
+  }  
+</script>  </body>  
+</html>
